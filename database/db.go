@@ -11,7 +11,7 @@ import (
 var (
 	host     = "localhost"
 	user     = "riza"
-	password = "posgres"
+	password = "postgres"
 	dbPort   = "5432"
 	dbname   = "learning-gorm"
 	db       *gorm.DB
@@ -26,4 +26,7 @@ func StartDB() {
 	}
 
 	db.Debug().AutoMigrate(models.User{}, models.Product{})
+}
+func GetDB() *gorm.DB {
+	return db
 }
